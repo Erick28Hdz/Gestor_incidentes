@@ -12,5 +12,5 @@
     ],
     'installable': True,
     'auto_install': False,
-    'icon': '/mi_modulo/static/description/icon.png',
+    'icon': '/gestor_incidentes/static/description/icon.png',
 }
