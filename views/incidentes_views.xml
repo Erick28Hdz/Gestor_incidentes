@@ -1,0 +1,44 @@
+<odoo>
+    <!-- Vista de Lista -->
+    <record id="view_seguridad_incidente_lista" model="ir.ui.view">
+        <field name="name">seguridad.incidente.lista</field>
+        <field name="model">seguridad.incidente</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="fecha"/>
+                <field name="gravedad"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de Formulario -->
+    <record id="view_seguridad_incidente_form" model="ir.ui.view">
+        <field name="name">seguridad.incidente.form</field>
+        <field name="model">seguridad.incidente</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="fecha"/>
+                        <field name="gravedad"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para mostrar las vistas -->
+    <record id="action_seguridad_incidente" model="ir.actions.act_window">
+        <field name="name">Incidentes de Seguridad</field>
+        <field name="res_model">seguridad.incidente</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_seguridad_incidente_lista"/>
+    </record>
+
+    <!-- Menú de acceso al módulo -->
+    <menuitem id="menu_seguridad" name="Gestión de Seguridad" sequence="10"/>
+    <menuitem id="submenu_incidentes" name="Incidentes" parent="menu_seguridad" action="action_seguridad_incidente" sequence="10"/>
+</odoo>
